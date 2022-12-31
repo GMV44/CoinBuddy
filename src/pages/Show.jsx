@@ -25,6 +25,7 @@ function Show() {
             <img src={store.data.image.large}/>
 <h2>{store.data.name} ({store.data.symbol})</h2>
         </header>
+        <div className='width'>
         <div className='show-graph'>
             <ResponsiveContainer width='100%' height='100%'>
             <AreaChart
@@ -44,31 +45,40 @@ function Show() {
   </AreaChart>
             </ResponsiveContainer>
         </div>
-        
-  <div>
-    <h4>Market Cap Rank</h4>
+        </div>
+
+        <div className='show-details'>
+            <div className='width'>
+            <h2>Details</h2>
+
+    <div className='show-details-row'>
+    <h3>Market Cap Rank</h3>
     <span>{store.data.market_cap_rank}</span>
   </div>
-  <div>
-    <h4>24h High</h4>
+  <div className='show-details-row'>
+    <h3>24h High</h3>
     <span>{store.data.market_data.high_24h.usd}</span>
   </div>
-  <div>
-    <h4>24h Low</h4>
+  <div className='show-details-row'>
+    <h3>24h Low</h3>
     <span>{store.data.market_data.low_24h.usd}</span>
   </div>
-  <div>
-    <h4>Circulating Supply</h4>
+  <div className='show-details-row'>
+    <h3>Circulating Supply</h3>
     <span>{store.data.market_data.circulating_supply}</span>
   </div>
-  <div>
-    <h4>Current Price</h4>
+  <div className='show-details-row'>
+    <h3>Current Price</h3>
     <span>{store.data.market_data.current_price.usd}</span>
   </div>
-  <div>
-    <h4>1y Change</h4>
+  <div className='show-details-row'>
+    <h3>1y Change</h3>
     <span>{store.data.market_data.price_change_percentage_1y.toFixed(2)}%</span>
   </div>
+  </div>
+        </div>
+        
+  
   </div>
   )
 }

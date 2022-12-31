@@ -17,7 +17,9 @@ function Home() {
       <header className='home-search'>
         <div className='width'>
         <h2>Search For A Coin</h2>
+        <div className='home-search-input'>
         <input type="text" value={store.query} onChange={store.setQuery}/>
+        </div>
         </div>
       </header>
     <div className='home-cryptos'>
