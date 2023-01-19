@@ -1,16 +1,16 @@
 import React from 'react';
 import homeStore from '../stores/homeStore';
-import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import ListItems from '../components/ListItems';
+import { useEffect } from 'react';
 
 function Home() {
 
   const store = homeStore()
 
-  React.useEffect(()=>{
+  useEffect(()=>{
     store.fetchCoins()
-  },[])
+  },[store])
   return (
     <div>
       <Header/>

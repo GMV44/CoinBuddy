@@ -1,8 +1,9 @@
-import React , { PureComponent } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom'
 import showStore from '../stores/showStore'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import Header from '../components/Header';
+import { useEffect } from 'react';
 
 
 function Show() {
@@ -11,9 +12,9 @@ function Show() {
     const params = useParams()
     
 
-    React.useEffect(() => {
+    useEffect(() => {
         store.fetchData(params.id);
-    }, [])
+    }, [store, params])
 
     if (!store.data) return <></>;
         
@@ -22,7 +23,7 @@ function Show() {
     <div> 
         <Header back />
         <header className='show-header'>
-            <img src={store.data.image.large}/>
+            <img alt='theImg' src={store.data.image.large}/>
 <h2>{store.data.name} ({store.data.symbol})</h2>
         </header>
         <div className='width'>
