@@ -14,7 +14,7 @@ function Show() {
 
     useEffect(() => {
         store.fetchData(params.id);
-    }, [store, params])
+    }, []) // eslint-disable-line 
 
     if (!store.data) return <></>;
         

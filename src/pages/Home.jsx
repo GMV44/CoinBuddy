@@ -10,7 +10,7 @@ function Home() {
 
   useEffect(()=>{
     store.fetchCoins()
-  },[store])
+  },[]) // eslint-disable-line 
   return (
     <div>
       <Header/>
